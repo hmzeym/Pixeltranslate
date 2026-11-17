@@ -1,0 +1,121 @@
+PIXEL TRANSLATE - KURULUM REHBERİ (BETA 1)
+==========================================
+
+NE YAPAR?
+Telefonun kamerasını TV'ye / monitöre / oyun ekranına tutarsın. Uygulama
+ekrandaki İngilizce altyazıları okur, Türkçeye çevirir, telefonda Türkçe
+altyazı gösterir ve Türkçe bir sesle seslendirir. Mikrofon kullanmaz.
+Kurulumdan sonra internetsiz çalışır (isteğe bağlı yapay zekâ hariç).
+
+BU PAKETTE NE VAR?
+Uygulamanın hazır dosyaları. Bunları ücretsiz bir web adresine koyman gerekir
+(aşağıda GitHub Pages ile anlatıyorum). Sebep: telefondaki Chrome, kamera izni
+ve "uygulama olarak yükleme" için güvenli (https) bir adres ister. Dosyaya
+telefonda çift dokunarak açmak çalışmaz.
+
+NE GEREKİR?
+- Android telefon + güncel Chrome
+- En az 4 GB RAM önerilir, yaklaşık 1 GB boş yer
+- İlk kurulumda Wi-Fi ile yaklaşık 0,5 GB indirme (bir kez)
+- Ücretsiz bir GitHub hesabı
+
+
+1. ADIM - DOSYALARI GITHUB'A YÜKLE (bir kez yapılır)
+----------------------------------------------------
+1. github.com'a gir, ücretsiz hesap aç (hesabın varsa giriş yap).
+2. Sağ üstteki "+" -> "New repository". Adı: pixel-translate
+   "Public" seçili olsun. "Create repository"ye bas.
+3. Açılan sayfada "uploading an existing file" bağlantısına dokun.
+4. Bu zip'ten çıkardığın dosyaların HEPSİNİ seçip yükle.
+   ÖNEMLİ: Dosyalar bir klasörün içinde değil, doğrudan deponun ana
+   dizininde olmalı (index.html ana dizinde görünmeli).
+5. Yükleme bitince alttaki yeşil "Commit changes" düğmesine bas.
+6. Üstte "Settings" -> solda "Pages". "Build and deployment" altında:
+   Source: "Deploy from a branch"
+   Branch: "main"  ve klasör: "/ (root)"  -> "Save".
+7. 1-2 dakika bekle (bazen 10 dakikaya kadar sürer). Adresin şöyle olur:
+   https://KULLANICI-ADIN.github.io/pixel-translate/
+   (Adres, Pages sayfasının en üstünde de yazar.)
+
+(GitHub yerine başka bir ücretsiz barındırıcı da olur; tek şart adresin
+ https ile başlaması ve dosyaların ana dizinde durması.)
+
+
+2. ADIM - TELEFONDA AÇ VE YÜKLE
+-------------------------------
+1. Telefonda Chrome ile adresi aç. Kamera izni sorarsa "İzin ver".
+2. "İlk kurulum" kartında "Paketleri indir" düğmesine bas.
+   Wi-Fi'de ol ve uygulamayı açık bırak. Okuma paketi yaklaşık 10 MB,
+   çeviri paketi yaklaşık 0,5 GB; birkaç dakika sürebilir. Bu bir kez yapılır.
+3. "Uygulamayı yükle" düğmesine bas. Görünmezse Chrome menüsü (üç nokta) ->
+   "Uygulamayı yükle" ya da "Ana ekrana ekle".
+4. Ana ekranda "Pixel Translate" simgesi çıkar. Bundan sonra oradan aç;
+   tarayıcı çubuğu olmadan, normal bir uygulama gibi açılır.
+
+
+3. ADIM - TÜRKÇE SES (internetsiz konuşması için)
+-------------------------------------------------
+Telefon ayarlarında Türkçe ses verisi yüklü olmalı. Yol telefona göre değişir;
+genelde: Ayarlar -> Sistem -> Diller ve giriş -> Metin okuma çıkışı ->
+(Google) Ayarlar (dişli) -> Ses verilerini yükle -> Türkçe.
+Sonra uygulamada Ayarlar -> Ses -> "Sesi dene" ile kontrol et.
+
+
+4. ADIM - KULLAN
+----------------
+1. Uygulamayı aç, "Başla"ya bas.
+2. Kamerayı TV'ye / monitöre doğrult. Sarı çerçeveyi altyazıların üstüne
+   getir (sürükle; köşelerinden boyutlandır).
+3. Altyazı çıkınca uygulama kendiliğinden okur, çevirir, seslendirir.
+   Okumazsa "Şimdi oku"ya bas.
+4. Telefonun medya sesi açık olsun. Telefonu mümkün olduğunca sabit,
+   ekrana karşıdan tut.
+5. Ayarlar -> "Okuma / Ses" bölümlerinden boyut, hız ve duygu şiddetini
+   ayarlayabilirsin.
+
+
+YAPAY ZEKÂ (isteğe bağlı)
+-------------------------
+Ana ekrandaki "Yapay zekâ ile geliştir" anahtarı çeviriyi, tonu ve duyguyu
+Claude ile daha doğal hâle getirir. İlk açışta bir Claude API anahtarı ister
+(console.anthropic.com; kullanım ücretlidir, Console'da aylık harcama sınırı
+koymanı öneririm). Kapalıyken her şey telefonda ve ücretsiz yapılır.
+İnternet kesilirse uygulama kendiliğinden telefondaki çeviriye döner.
+Yalnızca okunan metin gönderilir; resim göndermek ayrı bir seçenektir ve
+kapalıdır.
+
+
+SORUN GİDERME
+-------------
+- Kamera açılmıyor: Chrome adres çubuğundaki kilit simgesi -> İzinler ->
+  Kamera -> İzin ver.
+- İndirme takıldı / hata verdi: Wi-Fi'ye bağlan, uygulamayı açık tut,
+  Ayarlar -> "Çevrimdışı paketler" bölümünde "İndir"e tekrar bas.
+- Ses çıkmıyor: medya sesini aç; Ayarlar -> Ses -> "Sesi dene". Türkçe ses
+  verisinin yüklü olduğundan emin ol (3. adım).
+- Yanlış / eksik okuyor: telefonu yaklaştır, ekran parlamasını azalt,
+  sarı çerçeveyi sadece altyazıyı içine alacak şekilde küçült.
+- Yeni sürüm: yeni dosyaları aynı depoya yükleyip eskilerin üstüne yaz
+  ("Add file" -> "Upload files"). Uygulama açılışta kendini günceller.
+- Ayarlar -> en altta "Sürüm" satırı hangi sürümü kullandığını gösterir.
+
+
+DÜRÜST NOTLAR (BETA)
+--------------------
+- Bu sürüm henüz gerçek bir telefonda denenmedi. Okuma, çeviri, ses ve
+  internetsiz çalışma zinciri sahte kamera ve sahte ses ile test edildi.
+  Gerçek telefondaki hız, bellek kullanımı ve okuma kalitesini bilmiyorum.
+- Çeviri modeli büyük (yaklaşık 0,5 GB). Belleği az telefonlarda (4 GB ve
+  altı) yavaş kalabilir ya da hiç açılmayabilir. İlk açılışta yüklenmesi
+  yarım dakikayı bulabilir.
+- Çevrimdışı çeviri daha "kelimesi kelimesine"dir; yapay zekâ açıkken daha
+  doğal olur.
+- Duygu çevrimdışıyken kelimelerden ve noktalamadan tahmin edilir ve sesin
+  tonu, hızı, seviyesiyle taklit edilir; gerçek bir seslendirme sanatçısı
+  gibi olmaz.
+- Süslü yazı tipleri, parlama, ekran kafesi (moiré) ve çok hızlı değişen
+  altyazılar okumayı zorlaştırır.
+- Oyun ekranında altyazının yakınındaki küçük yazılar (cephane, skor vb.)
+  bazen altyazıya karışabilir.
+
+Sorunlarını ve gördüklerini bana yaz; bir sonraki sürümde düzeltirim.
